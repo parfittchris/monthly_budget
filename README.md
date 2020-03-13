@@ -17,6 +17,7 @@ Clone the repo to your local machine and open the application in your choice of 
 ## Code Sample
 Setting Inputs and Debounce method. The set inputs method takes the salary and percentage choices made by the user and calculates the expense and savings fields, outputting them to the screen. The numbers are automatically generated as the user types in their salary. I also added a debounce method that holds on setting the values until 750ms have passed without user intervention. This is allows the user to input their entire salary before the function runs.
 
+
 ```debounce(func, wait, immediate) {
     let timeout;
 
