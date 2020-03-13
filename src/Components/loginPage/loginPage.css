@@ -1,0 +1,23 @@
+#loginPage {
+    position: absolute;
+    width: 30vw;
+    height: 55vh;
+    top: 15vh;
+    left: 35vw;
+    border: 3px solid black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(30, 19, 184, 0.363);
+    border-radius: 25px;
+    font-size: 20px;
+}
+
+.loginText {
+    color:white;
+}
+
+#loginBtn {
+    margin: 20px auto;
+    width: 25%;
+}
