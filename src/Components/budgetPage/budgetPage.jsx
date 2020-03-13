@@ -7,7 +7,7 @@ class budgetPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: 'Chris',
+      name: this.props.user.name,
       slider: 1,
       salary: null,
       expense: null,
@@ -43,8 +43,8 @@ class budgetPage extends React.Component {
 
   setInputs() {
     const salary = document.getElementById('salary').value;
-    const expense = ((salary / 12) * (this.state.slider / 100));
-    const savings = (salary / 12) - expense;
+    const expense = (salary / 12) * (this.state.slider / 100);
+    const savings = salary / 12 - expense;
 
     if (salary) {
       this.setState({
@@ -68,7 +68,7 @@ class budgetPage extends React.Component {
       this.props.userUpdateBudget(this.state);
       this.props.history.push('/savings');
     } else {
-      alert('Please enter a salary')
+      alert('Please enter a salary');
     }
   }
 

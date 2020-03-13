@@ -4,7 +4,7 @@ import budgetPage from './budgetPage';
 
 const mapStateToProps = state => {
   return {
-    state
+    user: state.sessionsReducer
   };
 };
 

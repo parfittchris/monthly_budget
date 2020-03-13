@@ -1,20 +1,34 @@
 import React from 'react';
 import GoogleLogin from 'react-google-login';
 
-export function loginPage() {
+class loginPage extends React.Component {
+
+  render() {
     const responseGoogle = response => {
         console.log(response)
      }
 
+     const redirect = response => {
+        const user = {
+          name: response.profileObj.givenName,
+          email: response.profileObj.email
+        };
+
+        this.props.login(user)
+        window.location.replace('http://localhost:3000/#/budget');
+     }
+
      return (
        <GoogleLogin
-         clientId='428362583003-1u60melabveqk6gs57vsgrar0g1vp1dr.apps.googleusercontent.com'
+         clientId='428362583003-j1lujcao0smc555smf6b0ck703c22h8n.apps.googleusercontent.com'
          buttonText='Login'
-         onSuccess={responseGoogle}
+         onSuccess={redirect}
          onFailure={responseGoogle}
          cookiePolicy={'single_host_origin'}
        />
      );
+    }
 }
 
 
+export default loginPage;
