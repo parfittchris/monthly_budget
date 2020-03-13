@@ -32,12 +32,19 @@
     box-sizing: border-box;
 }
 
-#budgetForm > button {
-    width: 15%;
-    height: 6.5%;
-    left: 42.5%;
+#budgetBtns {
+    display: flex;
+    position:absolute;
+    left: 30%;
+    width: 40%;
     bottom: 2%;
-    position: absolute;
+    height: 6.5%;
+}
+
+#budgetBtns > button {
+    width: 40%;
+    height: 100%;
+    margin: 0 5%;
     border: 2px solid black;
     border-radius: 3px;
     background-color: rgb(50, 40, 199);
@@ -45,13 +52,9 @@
     font-weight: 700;
 }
 
-#budgetForm > button:active {
+#budgetBtns > button:active {
     background-color: rgb(25, 20, 105);
     outline: none;
-}
-
-#salary {
-    /* padding: 5px; */
 }
 
 input {

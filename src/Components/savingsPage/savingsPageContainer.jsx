@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
+import { logout } from '../../Actions/sessionActions';
 import savingsPage from './savingsPage';
+
 
 const mapStateToProps = state => {
   return {
@@ -7,4 +9,10 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, null)(savingsPage);
+const mapDispatchToProps = dispatch => {
+  return {
+    logout: () => dispatch(logout())
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(savingsPage);

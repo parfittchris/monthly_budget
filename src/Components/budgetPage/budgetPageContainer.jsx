@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { userUpdateBudget } from '../../Actions/budgetActions';
+import { logout } from '../../Actions/sessionActions';
 import budgetPage from './budgetPage';
 
 const mapStateToProps = state => {
@@ -10,7 +11,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    userUpdateBudget: budget => dispatch(userUpdateBudget(budget))
+    userUpdateBudget: budget => dispatch(userUpdateBudget(budget)),
+    logout: () => dispatch(logout())
   };
 };
 

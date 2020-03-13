@@ -15,7 +15,6 @@ class loginPage extends React.Component {
         };
 
         this.props.login(user)
-        window.location.replace('http://localhost:3000/#/budget');
      }
 
      return (

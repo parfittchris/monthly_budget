@@ -17,6 +17,7 @@ class budgetPage extends React.Component {
     this.debounce = this.debounce.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.logout = this.logout.bind(this);
   }
 
   // debounce method on salary input change to only
@@ -53,6 +54,10 @@ class budgetPage extends React.Component {
         savings: savings.toFixed(2)
       });
     }
+  }
+
+  logout() {
+    this.props.logout();
   }
 
   handleChange(e) {
@@ -119,7 +124,10 @@ class budgetPage extends React.Component {
             <p>Your Savings:</p>
             <p>{savings}</p>
           </div>
-          <button onClick={this.handleSubmit}>Submit</button>
+          <div id='budgetBtns'>
+            <button onClick={this.handleSubmit}>Submit</button>
+            <button onClick={this.logout}>Logout</button>
+          </div>
         </form>
       </div>
     );
