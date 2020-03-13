@@ -1,68 +1,55 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Budget Maker - Help budget your monthly income!
 
-## Available Scripts
+## Background and Overview
+With the Budget Maker, simply input your yearly salary and a percentage to take out, and the app will automatically calculate your monthly expenses and savings. After submitting your choices, the app confirms your inputs. This app was built using the Create React App.
 
-In the project directory, you can run:
+## Features
+The Budget Maker App has the following features:
+  * Google authentication that must be passed before the app can be used
+  * Budget breakdown featuring gross salary input field and percentage slider
+  * Login and Logout features
+  
+![wire frame](https://github.com/parfittchris/monthly_budget/blob/master/assets/appScreenshot.png)
 
-### `yarn start`
+## How to install and run
+Clone the repo to your local machine and open the application in your choice of code editor. Ensure Node.js is installed and then type 'npm run deploy' in the terminal directory of where the package.json is located. Press 'Enter' and the app will open up in localhost automatically.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Code Sample
+Setting Inputs and Debounce method. The set inputs method takes the salary and percentage choices made by the user and calculates the expense and savings fields, outputting them to the screen. The numbers are automatically generated as the user types in their salary. I also added a debounce method that holds on setting the values until 750ms have passed without user intervention. This is allows the user to input their entire salary before the function runs.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+```debounce(func, wait, immediate) {
+    let timeout;
 
-### `yarn test`
+    return function executedFunction() {
+      let context = this;
+      let args = arguments;
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+      let later = function() {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+      };
 
-### `yarn build`
+      let callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if (callNow) func.apply(context, args);
+    };
+  }
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  setInputs() {
+    const salary = document.getElementById('salary').value;
+    const expense = (salary / 12) * (this.state.slider / 100);
+    const savings = salary / 12 - expense;
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+    if (salary) {
+      this.setState({
+        salary: parseFloat(salary).toFixed(2),
+        expense: parseFloat(expense).toFixed(2),
+        savings: savings.toFixed(2)
+      });
+    }
+  }
+ ```
+ ### Future Additions
+ * Add more criteria for more effective filtering
+ * Add option to increase breakdown to weeks or days
