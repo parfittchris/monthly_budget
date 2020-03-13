@@ -1,0 +1,10 @@
+button:hover {
+    cursor: pointer;
+}
+
+body {
+     background-image: url("./assets/appBackground.jpeg");
+     background-repeat: no-repeat;
+     background-size: 100vw 100vh;
+     font-family: 'Libre Baskerville', serif;
+}    

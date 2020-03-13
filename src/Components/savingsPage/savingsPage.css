@@ -1,3 +1,45 @@
-.savingsTitle {
-    background-color: red;
+#savingsPage {
+    position: absolute;
+    width: 50vw;
+    height: 75vh;
+    top: 12.5vh;
+    left: 25vw;
+    border: 3px solid rgb(68, 9, 68);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 25px;
+}
+
+#savingsInfo {
+    position: relative;
+    display:flex;
+    flex-direction: column;
+    width: 75%;
+    height: 80%;
+    left: 12.5%;
+    top: 10%;
+}
+
+.savingsInfoItem {
+    display: flex;
+    justify-content: space-around;
+}
+
+#savingsPage > button {
+    width: 15%;
+    left: 42.5%;
+    bottom: 2%;
+    position: absolute;
+    border: 2px solid black;
+    border-radius: 3px;
+    background-color: rgb(179, 31, 31);
+    color: white;
+    font-weight: 700;
+}
+
+#savingsPage > button:active {
+    background-color: rgb(102, 18, 18);
+    outline: none;
 }
