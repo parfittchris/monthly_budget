@@ -1,5 +1,9 @@
 # Budget Maker - Help budget your monthly income!
 
+## One Click Install and Run
+```$ npm run deploy```
+
+
 ## Background and Overview
 With the Budget Maker, simply input your yearly salary and a percentage to take out, and the app will automatically calculate your monthly expenses and savings. After submitting your choices, the app confirms your inputs. This app was built using the Create React App.
 
@@ -10,9 +14,6 @@ The Budget Maker App has the following features:
   * Login and Logout features
   
 ![wire frame](https://github.com/parfittchris/monthly_budget/blob/master/assets/appScreenshot.png)
-
-## How to install and run
-Clone the repo to your local machine and open the application in your choice of code editor. Ensure Node.js is installed and then type 'npm run deploy' in the terminal directory of where the package.json is located. Press 'Enter' and the app will open up in localhost automatically.
 
 ## Code Sample
 Setting Inputs and Debounce method. The set inputs method takes the salary and percentage choices made by the user and calculates the expense and savings fields, outputting them to the screen. The numbers are automatically generated as the user types in their salary. I also added a debounce method that holds on setting the values until 750ms have passed without user intervention. This is allows the user to input their entire salary before the function runs.
