@@ -44,7 +44,7 @@ class budgetPage extends React.Component {
   setInputs() {
     const salary = document.getElementById('salary').value;
     const expense = ((salary / 12) * (this.state.slider / 100));
-    const savings = salary - expense;
+    const savings = (salary / 12) - expense;
 
     if (salary) {
       this.setState({
@@ -88,24 +88,23 @@ class budgetPage extends React.Component {
       <div id='budgetPage'>
         <h1>Welcome {this.state.name}!</h1>
         <div>
-          <div>
-            <h3>Select Expense Percentage (1% p- 30%)</h3>
-            <h3>Current: {this.state.slider}%</h3>
+          <h3>Select Expense Percentage (1% - 30%)</h3>
+          <div id='slider'>
+            <Slider
+              value={this.state.slider}
+              orientation='horizontal'
+              onChange={this.handleChange}
+              onChangeComplete={this.debounce(this.setInputs.bind(this), 750)}
+              min={1}
+              max={30}
+              step={1}
+            />
           </div>
-          <Slider
-            id='slider'
-            value={this.state.slider}
-            orientation='horizontal'
-            onChange={this.handleChange}
-            onChangeComplete={this.debounce(this.setInputs.bind(this), 750)}
-            min={1}
-            max={30}
-            step={1}
-          />
+          <h3>Percentage: {this.state.slider}%</h3>
         </div>
         <form id='budgetForm'>
           <div className='formSection'>
-            <label>Your Salary $</label>
+            <label>Your Salary:</label>
             <input
               type='number'
               id='salary'
@@ -113,11 +112,11 @@ class budgetPage extends React.Component {
             />
           </div>
           <div className='formSection'>
-            <label>Your Expense</label>
+            <p>Your Expense:</p>
             <p>{expense}</p>
           </div>
           <div className='formSection'>
-            <label>Your Savings</label>
+            <p>Your Savings:</p>
             <p>{savings}</p>
           </div>
           <button onClick={this.handleSubmit}>Submit</button>

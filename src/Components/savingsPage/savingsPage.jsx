@@ -10,7 +10,7 @@ class savingsPage extends React.Component {
     return (
       <div id='savingsPage'>
         <div id='savingsInfo'>
-          <h1>Thank you {this.props.budget.name}</h1>
+          <h1>Thank you, {this.props.budget.name}</h1>
           <div className='savingsInfoItem'>
             <h2>Your Election:</h2>
             <h2>{this.props.budget.slider}%</h2>

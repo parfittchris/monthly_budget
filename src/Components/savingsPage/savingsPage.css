@@ -4,7 +4,7 @@
     height: 75vh;
     top: 12.5vh;
     left: 25vw;
-    border: 3px solid rgb(68, 9, 68);
+    border: 3px solid black;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -29,6 +29,7 @@
 
 #savingsPage > button {
     width: 15%;
+    height: 6.5%;
     left: 42.5%;
     bottom: 2%;
     position: absolute;
@@ -41,5 +42,4 @@
 
 #savingsPage > button:active {
     background-color: rgb(102, 18, 18);
-    outline: none;
 }
