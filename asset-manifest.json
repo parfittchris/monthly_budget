@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/monthly_budget/static/css/main.dc5a0058.chunk.css",
+    "main.js": "/monthly_budget/static/js/main.4cd67fe1.chunk.js",
+    "main.js.map": "/monthly_budget/static/js/main.4cd67fe1.chunk.js.map",
+    "runtime-main.js": "/monthly_budget/static/js/runtime-main.25045692.js",
+    "runtime-main.js.map": "/monthly_budget/static/js/runtime-main.25045692.js.map",
+    "static/css/2.14fbd4c8.chunk.css": "/monthly_budget/static/css/2.14fbd4c8.chunk.css",
+    "static/js/2.40192707.chunk.js": "/monthly_budget/static/js/2.40192707.chunk.js",
+    "static/js/2.40192707.chunk.js.map": "/monthly_budget/static/js/2.40192707.chunk.js.map",
+    "index.html": "/monthly_budget/index.html",
+    "precache-manifest.751d1d4d48cc2e0e0b1a9033d6b2176e.js": "/monthly_budget/precache-manifest.751d1d4d48cc2e0e0b1a9033d6b2176e.js",
+    "service-worker.js": "/monthly_budget/service-worker.js",
+    "static/css/2.14fbd4c8.chunk.css.map": "/monthly_budget/static/css/2.14fbd4c8.chunk.css.map",
+    "static/css/main.dc5a0058.chunk.css.map": "/monthly_budget/static/css/main.dc5a0058.chunk.css.map",
+    "static/js/2.40192707.chunk.js.LICENSE.txt": "/monthly_budget/static/js/2.40192707.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/monthly_budget/static/media/appBackground.f38517c1.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.25045692.js",
+    "static/css/2.14fbd4c8.chunk.css",
+    "static/js/2.40192707.chunk.js",
+    "static/css/main.dc5a0058.chunk.css",
+    "static/js/main.4cd67fe1.chunk.js"
+  ]
+}
